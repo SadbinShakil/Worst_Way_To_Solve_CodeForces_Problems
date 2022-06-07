@@ -18,15 +18,24 @@ for i in range(0,row):
         print(InputMatrix[i][j], end="  ")
     print( )
 
-
+sum = []
 for i in range(0,row):
     for j in range(0,3):
-        if(j==0):
-            sum1 = sum1 + InputMatrix[i][j]
-        elif(j==1):
-            sum2 = sum2 + InputMatrix[i][j]
-        elif(j==2):
-            sum3 = sum3 + InputMatrix[i][j]
+        sum1 = sum1 + InputMatrix[j][i]
+    sum.append(sum1)
+    sum1 = 0
+
+print(sum)
+
+
+# for i in range(0,row):
+#     for j in range(0,3):
+#         if(j==0):
+#             sum1 = sum1 + InputMatrix[i][j]
+#         elif(j==1):
+#             sum2 = sum2 + InputMatrix[i][j]
+#         elif(j==2):
+#             sum3 = sum3 + InputMatrix[i][j]
 
 
 # for i in range(0,row):
@@ -36,8 +45,8 @@ for i in range(0,row):
 #     sum2 = sum2 + InputMatrix[i][1]
 #     sum3 = sum3 + InputMatrix[i][2]
       
-print("Total sum for each vectors: ",sum1,sum2,sum3)
-if(sum1 == 0 and sum2 == 0 and sum3 == 0):
+print("Total sum for each vectors: ",sum)
+if (all(v == 0 for v in sum)):
     print("YES")
 else:
     print("NO")
