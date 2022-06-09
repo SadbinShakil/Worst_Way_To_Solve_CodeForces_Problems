@@ -9,5 +9,9 @@ for i in range(Tot_no_of_banana_needed):
     total_money_needed = total_money_needed + (Initial_banana_price + (i*Initial_banana_price))
 
 print("Total money needed for all these banana: ",total_money_needed)
-print("Total money need to borrow from friends: ",abs(total_money_needed-Total_money_have))
+
+if((total_money_needed-Total_money_have)<=0):
+    print("Total money need to borrow from friends: 0")
+else:
+    print("Total money need to borrow from friends: ",(total_money_needed-Total_money_have))
 
